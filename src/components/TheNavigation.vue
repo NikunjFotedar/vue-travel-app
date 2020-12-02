@@ -11,7 +11,10 @@
         :key="destination.name"
       >
         <router-link
-          :to="{ name: 'DestinationDetails', params: { id: destination.id } }"
+          :to="{
+            name: 'DestinationDetails',
+            params: { slug: destination.slug }
+          }"
         >
           {{ destination.name }}</router-link
         >

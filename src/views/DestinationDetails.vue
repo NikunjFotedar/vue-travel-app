@@ -16,20 +16,20 @@ export default {
   data() {
     return {
       //always use a data key to use this.$route.params.id due to es6 stylus.direct this.$route.id wont work in template
-      destinationID: this.$route.params.id
+      destinationSlug: this.$route.params.slug
     };
   },
   computed: {
     destination() {
-      console.log(this.destinationID);
+      console.log(this.destinationSlug);
       console.log(
         "destination: " +
           store.destinations.find(
-            destination => destination.id == this.destinationID
+            destination => destination.slug == this.destinationSlug
           )
       );
       return store.destinations.find(
-        destination => destination.id == this.destinationID
+        destination => destination.slug == this.destinationSlug
       );
     }
   }

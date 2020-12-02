@@ -9,7 +9,7 @@
         @click="
           $router.push({
             name: 'DestinationDetails',
-            params: { id: destination.id }
+            params: { slug: destination.slug }
           })
         "
       >
