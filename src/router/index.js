@@ -2,6 +2,17 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import Home from "../views/Home.vue";
 
 const routes = [
+  /*
+    linkExactActiveClass command assigns the class for the router-links
+    This class help in highlighting the selected link.
+
+    by default linkExactActiveClass is assigned as 'a.router-link-exact-active' 
+    but you can change it as follows:
+    linkExactActiveClass: "vue-school-active-class"
+    now just rename the highlighted class name in the desired
+  
+  
+  */
   {
     path: "/",
     name: "Home",

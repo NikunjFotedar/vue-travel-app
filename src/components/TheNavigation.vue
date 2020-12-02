@@ -31,8 +31,7 @@ import store from "@/store";
 export default {
   data() {
     return {
-      destinations: store.destinations,
-      destinationID: this.$route.params.id
+      destinations: store.destinations
     };
   }
 };
@@ -42,6 +41,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  border-bottom: 2px solid black;
 }
 #nav a {
   font-weight: bold;
