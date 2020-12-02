@@ -6,10 +6,15 @@
         v-for="destination in destinations"
         :key="destination.name"
         :class="destinations"
-        @click="$router.push(destination.name)"
+        @click="
+          $router.push({
+            name: 'DestinationDetails',
+            params: { id: destination.id }
+          })
+        "
       >
         <figure>
-          <!--<router-link :to="destination.name" tag="div">elements</router-link>-->
+          <!--<router-link :to="destination.name">elements to be hyperlinked</router-link>-->
           <img
             :src="require(`@/assets/${destination.image}`)"
             :alt="destination.name"

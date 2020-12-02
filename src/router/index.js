@@ -17,28 +17,10 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/About.vue")
   },
   {
-    path: "/Brazil",
-    name: "Brazil",
+    path: "/details/:id",
+    name: "DestinationDetails",
     component: () =>
-      import(/* webpackChunkName: "brazil" */ "../views/Brazil.vue")
-  },
-  {
-    path: "/Hawaii",
-    name: "Hawaii",
-    component: () =>
-      import(/* webpackChunkName: "hawaii" */ "../views/Hawai.vue")
-  },
-  {
-    path: "/Panama",
-    name: "Panama",
-    component: () =>
-      import(/* webpackChunkName: "panama" */ "../views/Panama.vue")
-  },
-  {
-    path: "/Jamaica",
-    name: "Jamaica",
-    component: () =>
-      import(/* webpackChunkName: "jamaica" */ "../views/Jamaica.vue")
+      import(/* webpackChunkName: "details"*/ "../views/DestinationDetails.vue")
   }
 ];
 

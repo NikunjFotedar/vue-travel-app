@@ -2,7 +2,6 @@
   <div class="home">
     <h1>All Destinations</h1>
     <cards :destinations="destinations"></cards>
-    0
   </div>
 </template>
 
@@ -28,5 +27,6 @@ export default {
 .home {
   max-width: 1400px;
   margin: 0 auto;
+  text-align: center;
 }
 </style>
