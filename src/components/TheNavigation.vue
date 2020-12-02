@@ -41,16 +41,33 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid black;
+  transition: background-color 800ms;
+}
+#nav:hover a {
+  color: white;
+}
+#nav:hover .logo {
+  color: white;
+}
+#nav:hover {
+  border-bottom: 3px solid black;
+  background-color: coral;
+  transition: background-color 800ms;
 }
 #nav a {
   font-weight: bold;
   color: #2c3e50;
   text-decoration: none;
+  transition: color 400ms;
 }
 
 #nav a.router-link-exact-active {
   color: #42b983;
+  transition: color 400ms;
+}
+#nav:hover a.router-link-exact-active {
+  color: rgb(24, 24, 24);
 }
 .nav-links {
   display: flex;
@@ -64,9 +81,11 @@ export default {
 .links:hover {
   text-decoration: underline;
 }
+
 .logo {
   font-size: 20px;
   color: royalblue;
   font-weight: bold;
+  transition: color 400ms;
 }
 </style>

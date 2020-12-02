@@ -13,23 +13,16 @@
 <script>
 import store from "@/store.js";
 export default {
-  data() {
-    return {
-      //always use a data key to use this.$route.params.id due to es6 stylus.direct this.$route.id wont work in template
-      destinationSlug: this.$route.params.slug
-    };
+  props: {
+    slug: {
+      type: String,
+      required: true
+    }
   },
   computed: {
     destination() {
-      console.log(this.destinationSlug);
-      console.log(
-        "destination: " +
-          store.destinations.find(
-            destination => destination.slug == this.destinationSlug
-          )
-      );
       return store.destinations.find(
-        destination => destination.slug == this.destinationSlug
+        destination => destination.slug == this.slug
       );
     }
   }
