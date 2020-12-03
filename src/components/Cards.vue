@@ -69,6 +69,10 @@ img {
   box-shadow: 0.1em 0.2em 2em 0.1em grey;
   cursor: pointer;
 }
+.container:active {
+  box-shadow: 0.3em 0.6em 6em 0.1em grey;
+  cursor: pointer;
+}
 .destination-title {
   height: fit-content;
   width: fit-content;
