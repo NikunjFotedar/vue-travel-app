@@ -38,3 +38,25 @@ export default {
   }
 };
 </script>
+<style scoped>
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.experience-details {
+  display: flex;
+  justify-content: space-between;
+}
+p {
+  margin: 0 40px;
+  font-size: 20px;
+  text-align: left;
+}
+img {
+  max-width: 600px;
+  height: auto;
+  width: 100%;
+  max-height: 400px;
+}
+</style>
