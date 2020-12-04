@@ -1,6 +1,7 @@
 <template>
   <div>
     <section class="destination">
+      <GoBack />
       <h1>{{ destination.name }}</h1>
       <div class="destination-details">
         <img
@@ -38,7 +39,11 @@
 </template>
 <script>
 import store from "@/store.js";
+import GoBack from "@/components/GoBackButton.vue";
 export default {
+  components: {
+    GoBack
+  },
   props: {
     slug: {
       type: String,
