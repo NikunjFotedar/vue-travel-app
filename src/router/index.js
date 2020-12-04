@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
+import store from "@/store";
 
 const routes = [
   /*
@@ -47,10 +48,22 @@ const routes = [
             /* webpackChunkName: "experience"*/ "../views/ExperienceDetails.vue"
           )
       }
-    ]
+    ],
+    beforeEnter: (to, from, next) => {
+      const exists = store.destinations.find(
+        destination => destination.slug == to.params.slug
+      );
+      console.log("exists:" + exists);
+      if (exists) {
+        next();
+      } else {
+        console.log("in else case");
+        next({ name: "notFound" });
+      }
+    }
   },
   {
-    path: "/:catchAll(.*)",
+    path: "/:pathMatch(.*)*",
     name: "notFound",
     component: () =>
       import(/*webpackChunkName: "NotFound"*/ "../views/NotFound.vue")
