@@ -1,5 +1,6 @@
 <template>
-  <div id="app">
+  <div v-if="this.$route.name == 'notFound'"></div>
+  <div v-else id="app">
     <TheNavigation />
   </div>
   <router-view :key="$route.path" />
