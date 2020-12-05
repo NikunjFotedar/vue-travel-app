@@ -1,6 +1,8 @@
 <template>
   <div>
-    <router-link to="/"><h3>Go Back</h3></router-link>
+    <button @click="$router.push({ name: 'Home' })">
+      Home
+    </button>
   </div>
 </template>
 <script>

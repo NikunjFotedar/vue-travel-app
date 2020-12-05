@@ -46,18 +46,29 @@ const routes = [
         component: () =>
           import(
             /* webpackChunkName: "experience"*/ "../views/ExperienceDetails.vue"
-          )
+          ),
+        beforeEnter: (to, from, next) => {
+          let destination = store.destinations.find(
+            destination => destination.slug == to.params.slug
+          );
+          let exists = destination.experiences.find(
+            experience => experience.slug == to.params.experienceSlug
+          );
+          if (exists) {
+            next();
+          } else {
+            next({ name: "notFound" });
+          }
+        }
       }
     ],
     beforeEnter: (to, from, next) => {
-      const exists = store.destinations.find(
+      let exists = store.destinations.find(
         destination => destination.slug == to.params.slug
       );
-      console.log("exists:" + exists);
       if (exists) {
         next();
       } else {
-        console.log("in else case");
         next({ name: "notFound" });
       }
     }
